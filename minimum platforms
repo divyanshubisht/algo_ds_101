@@ -1,0 +1,38 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int test,count=0,platform=1,i,k,j,n;
+    cin>>test;
+    for(k=0;k<test;k++)
+    {
+        platform=1;
+        cin>>n;
+        int arr[n],dep[n];
+        for(i=0;i<n;i++)
+            cin>>arr[i];
+        for(i=0;i<n;i++)
+            cin>>dep[i];
+        for(i=1;i<=n;i++)
+        {   count=0;
+            for(j=i-1;j>=0;j--)
+            {
+              if(arr[i]>=arr[j] && arr[i]<=dep[j])
+              {
+                  count++;
+
+              }
+              else if(dep[i]>=arr[j] && dep[i]<=dep[j])
+              {
+                  count++;
+
+              }
+            }
+            if(count==platform)
+             platform++;
+        }
+        cout<<platform<<endl;
+    }
+
+    return 0;
+}

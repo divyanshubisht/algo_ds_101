@@ -1,0 +1,19 @@
+#include<iostream>
+#include<string>
+using namespace std;
+int main()
+{
+    int n,i,size;
+    cin>>n;
+    for(i=0;i<n;i++)
+    {
+        string str;
+        cin>>str;
+        size=str.length();
+        if(size<=10)
+            cout<<str<<endl;
+        else
+            cout<<str[0]<<size-2<<str[size-1]<<endl;
+    }
+    return 0;
+}
